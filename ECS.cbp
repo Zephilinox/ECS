@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ECS" />
+		<Option platforms="Windows;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ECS" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-audio-d" />
+					<Add library="sfml-graphics-d" />
+					<Add library="sfml-window-d" />
+					<Add library="sfml-network-d" />
+					<Add library="sfml-system-d" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin&quot; &quot;$(PROJECT_DIR)&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\libsndfile-1.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\openal32.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-audio-d-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-graphics-d-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-window-d-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-network-d-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-system-d-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug&quot;' />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ECS" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-audio" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-network" />
+					<Add library="sfml-system" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /c copy &quot;D:\Programming\C++\SFML2 - Install\bin&quot; &quot;$(PROJECT_DIR)&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\libsndfile-1.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\openal32.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-audio-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-graphics-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-window-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-network-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+					<Add after='cmd /c copy &quot;Z:\Programming\C++\SFML2 - Install\bin\sfml-system-2.dll&quot; &quot;$(PROJECT_DIR)\bin\Release&quot;' />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="Z:/Programming/C++/SFML2 - Install/include" />
+		</Compiler>
+		<Linker>
+			<Add directory="Z:/Programming/C++/SFML2 - Install/lib" />
+		</Linker>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
