@@ -26,7 +26,7 @@
 1361786630 source:z:\programming\c++\github repositories\ecs\src\velocitycomponent.cpp
 	"VelocityComponent.hpp"
 
-1361836376 source:z:\programming\c++\github repositories\ecs\main.cpp
+1361862497 source:z:\programming\c++\github repositories\ecs\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Constants.hpp"
@@ -34,6 +34,8 @@
 	"Entity.hpp"
 	"RenderSystem.hpp"
 	"CameraSystem.hpp"
+	"PlayerControlSystem.hpp"
+	"EntityMovementSystem.hpp"
 	"Component.hpp"
 	"HealthComponent.hpp"
 	"VelocityComponent.hpp"
@@ -373,6 +375,12 @@
 	<string>
 	<vector>
 
-1361836133 source:z:\programming\c++\github repositories\ecs\src\camerasystem.cpp
+1361861742 source:z:\programming\c++\github repositories\ecs\src\camerasystem.cpp
 	"CameraSystem.hpp"
+
+1361862173 source:z:\programming\c++\github repositories\ecs\src\entitymovementsystem.cpp
+	"EntityMovementSystem.hpp"
+
+1361864343 source:z:\programming\c++\github repositories\ecs\src\playercontrolsystem.cpp
+	"PlayerControlSystem.hpp"
 

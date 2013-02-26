@@ -6,6 +6,7 @@
 #include <iostream>
 #include <memory>
 #include <bitset>
+#include <typeinfo>
 
 //3RD
 #include <SFML/System.hpp>
@@ -59,9 +60,12 @@ bool Entity::hasComponent()
 {
     T comp;
 
+    std::cout << "debug hasComp1: " << typeid(comp).name() << "\n";
+    std::cout << "debug hasComp1: " << comp.type << "\n";
+
     if (componentFlags.test(comp.type))
     {
-        //std::cout << "Ent has " << comp.type << "\n";
+        std::cout << "Ent has " << comp.type << "\n";
         return true;
     }
 
@@ -73,13 +77,17 @@ bool Entity::hasComponent()
 {
     T1 comp;
 
+    std::cout << "debug hasComp2: " << typeid(comp).name() << "\n";
+    std::cout << "debug hasComp2: " << comp.type << "\n";
+    std::cout << componentFlags.to_string() << "\n";
+    std::cout << componentFlags[comp.type] << "\n";
     if (componentFlags.test(comp.type))
     {
-        //std::cout << "Ent has " << comp.type << "\n";
+        std::cout << "Ent has " << comp.type << "\n";
         return (true && this->hasComponent<T2, Other...>());
     }
 
-    //std::cout << "End does not have " << comp.type << "\n";
+    std::cout << "End does not have " << comp.type << "\n";
     return false;
 }
 

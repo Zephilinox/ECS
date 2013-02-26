@@ -9,6 +9,11 @@ CameraSystem::CameraSystem()
 
 void CameraSystem::run(sf::RenderWindow& window)
 {
+    if (!m_Ent->hasComponent<SpriteComponent>())
+    {
+        m_Ent = nullptr;
+    }
+
     if (m_Ent != nullptr)
     {
         m_Camera.setCenter(m_Ent->component<SpriteComponent>()->sprite.getPosition());

@@ -12,7 +12,7 @@ namespace constant
 
     const int windowWidth = 800;
     const int windowHeight = 800;
-    const int maxComponents = 100;
+    const int maxComponents = 128;
 }
 
 
