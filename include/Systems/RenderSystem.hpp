@@ -13,8 +13,8 @@
 #include "EntityManager.hpp"
 #include "Entity.hpp"
 #include "Components/Component.hpp"
-#include "Components/Sprite.hpp"
-#include "Components/Velocity.hpp"
+#include "Components/Display.hpp"
+#include "Components/Movement.hpp"
 
 class RenderSystem
 {

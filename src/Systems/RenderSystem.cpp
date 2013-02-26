@@ -11,7 +11,7 @@ RenderSystem::RenderSystem()
 
 void RenderSystem::run(sf::RenderWindow& window)
 {
-    m_Ents = m_EntMan.getEntsByComponent<Sprite>();
+    m_Ents = m_EntMan.getEntsByComponent<Display>();
 
     if (debug)
     {
@@ -21,23 +21,23 @@ void RenderSystem::run(sf::RenderWindow& window)
 
         for (size_t i = 0; i < m_Ents.size(); ++i)
         {
-            if (m_Ents[i]->hasComponent<Velocity>())
+            if (m_Ents[i]->hasComponent<Movement>())
             {
-                VA[0].position = m_Ents[i]->component<Sprite>()->sprite.getPosition();
-                VA[1].position = sf::Vector2f(m_Ents[i]->component<Sprite>()->sprite.getPosition().x + (m_Ents[i]->component<Velocity>()->velocity.x),
-                                              m_Ents[i]->component<Sprite>()->sprite.getPosition().y + (m_Ents[i]->component<Velocity>()->velocity.y));
+                VA[0].position = m_Ents[i]->component<Display>()->sprite.getPosition();
+                VA[1].position = sf::Vector2f(m_Ents[i]->component<Display>()->sprite.getPosition().x + (m_Ents[i]->component<Movement>()->velocity.x),
+                                              m_Ents[i]->component<Display>()->sprite.getPosition().y + (m_Ents[i]->component<Movement>()->velocity.y));
 
                 window.draw(VA);
             }
 
-            window.draw(m_Ents[i]->component<Sprite>()->sprite);
+            window.draw(m_Ents[i]->component<Display>()->sprite);
         }
     }
     else
     {
         for (size_t i = 0; i < m_Ents.size(); ++i)
         {
-            window.draw(m_Ents[i]->component<Sprite>()->sprite);
+            window.draw(m_Ents[i]->component<Display>()->sprite);
         }
     }
 }

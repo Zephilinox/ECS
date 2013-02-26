@@ -10,15 +10,15 @@
 #include "Constants.hpp"
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "Components/Velocity.hpp"
-#include "Components/Sprite.hpp"
+#include "Components/Movement.hpp"
+#include "Components/Display.hpp"
 #include "Vector.hpp"
 
 class MovementSystem
 {
 public:
     MovementSystem();
-    void run(float);
+    void run(double);
 private:
     static std::vector<std::shared_ptr<Entity>> m_Ents;
     static EntityManager m_EntMan;

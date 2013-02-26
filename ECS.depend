@@ -26,20 +26,20 @@
 1361786630 source:z:\programming\c++\github repositories\ecs\src\velocitycomponent.cpp
 	"VelocityComponent.hpp"
 
-1361905865 source:z:\programming\c++\github repositories\ecs\main.cpp
+1361907927 source:z:\programming\c++\github repositories\ecs\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Constants.hpp"
 	"EntityManager.hpp"
 	"Entity.hpp"
-	"RenderSystem.hpp"
-	"CameraSystem.hpp"
-	"PlayerControlSystem.hpp"
-	"EntityMovementSystem.hpp"
-	"Component.hpp"
-	"Health.hpp"
-	"Velocity.hpp"
-	"Sprite.hpp"
+	"Systems/RenderSystem.hpp"
+	"Systems/CameraSystem.hpp"
+	"Systems/PlayerControlSystem.hpp"
+	"Systems/MovementSystem.hpp"
+	"Components/Component.hpp"
+	"Components/Health.hpp"
+	"Components/Movement.hpp"
+	"Components/Display.hpp"
 
 1359117180 z:\programming\c++\sfml2 - install\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -396,12 +396,21 @@
 1361906245 source:z:\programming\c++\github repositories\ecs\src\components\velocity.cpp
 	"Components/Velocity.hpp"
 
-1361906245 source:z:\programming\c++\github repositories\ecs\src\systems\camerasystem.cpp
+1361908172 source:z:\programming\c++\github repositories\ecs\src\systems\camerasystem.cpp
 	"Systems/CameraSystem.hpp"
 
-1361906245 source:z:\programming\c++\github repositories\ecs\src\systems\playercontrolsystem.cpp
+1361908210 source:z:\programming\c++\github repositories\ecs\src\systems\playercontrolsystem.cpp
 	"Systems/PlayerControlSystem.hpp"
 
 1361906245 source:z:\programming\c++\github repositories\ecs\src\systems\rendersystem.cpp
 	"Systems/RenderSystem.hpp"
+
+1361908182 source:z:\programming\c++\github repositories\ecs\src\systems\movementsystem.cpp
+	"Systems/MovementSystem.hpp"
+
+1361907937 source:z:\programming\c++\github repositories\ecs\src\components\display.cpp
+	"Components/Display.hpp"
+
+1361908163 source:z:\programming\c++\github repositories\ecs\src\components\movement.cpp
+	"Components/Movement.hpp"
 

@@ -17,14 +17,17 @@
 
 #include "Components/Component.hpp"
 #include "Components/Health.hpp"
-#include "Components/Velocity.hpp"
-#include "Components/Sprite.hpp"
+#include "Components/Movement.hpp"
+#include "Components/Display.hpp"
 
 EntityManager EntMan;
 RenderSystem RenderSys;
 CameraSystem CameraSys;
 PlayerControlSystem PlyCntrlSys;
 MovementSystem EntMoveSys;
+
+sf::Clock PrevFrameTime;
+double dt;
 
 int main()
 {
@@ -34,29 +37,32 @@ int main()
     std::shared_ptr<Entity> Ent1 = EntMan.createEntity();
 
     {
-        std::shared_ptr<Sprite> Ent1Sprite = Ent1->component<Sprite>();
-        //Ent1Sprite->setTexture("Textures/Asteroid.png");
-        Ent1Sprite->sprite.setOrigin(Ent1Sprite->sprite.getTexture()->getSize().x / 2, Ent1Sprite->sprite.getTexture()->getSize().y / 2);
-        Ent1Sprite->sprite.setPosition(constant::windowWidth / 2, constant::windowHeight / 2);
+        std::shared_ptr<Display> Ent1Display = Ent1->component<Display>();
+        //Ent1Display->setTexture("Textures/Asteroid.png");
+        Ent1Display->sprite.setOrigin(Ent1Display->sprite.getTexture()->getSize().x / 2, Ent1Display->sprite.getTexture()->getSize().y / 2);
+        Ent1Display->sprite.setPosition(constant::windowWidth / 2, constant::windowHeight / 2);
     }
 
-    Ent1->component<Velocity>();
+    Ent1->component<Movement>();
 
     std::shared_ptr<Entity> Ent2 = EntMan.createEntity();
 
     {
-        std::shared_ptr<Sprite> Ent2Sprite = Ent2->component<Sprite>();
-        Ent2Sprite->setTexture("Textures/Asteroid.png");
-        Ent2Sprite->sprite.setOrigin(Ent2Sprite->sprite.getTexture()->getSize().x / 2, Ent2Sprite->sprite.getTexture()->getSize().y / 2);
-        Ent2Sprite->sprite.setPosition(constant::windowWidth / 4, constant::windowHeight / 4);
+        std::shared_ptr<Display> Ent2Display = Ent2->component<Display>();
+        Ent2Display->setTexture("Textures/Asteroid.png");
+        Ent2Display->sprite.setOrigin(Ent2Display->sprite.getTexture()->getSize().x / 2, Ent2Display->sprite.getTexture()->getSize().y / 2);
+        Ent2Display->sprite.setPosition(constant::windowWidth / 4, constant::windowHeight / 4);
     }
-
 
     CameraSys.followEntity(Ent1->id);
     PlyCntrlSys.controlEntity(Ent1->id);
     RenderSys.debug = true;
+
     while (window.isOpen())
     {
+        dt = PrevFrameTime.getElapsedTime().asSeconds();
+        PrevFrameTime.restart();
+
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -67,8 +73,8 @@ int main()
         window.clear(sf::Color(40, 40, 40));
 
         CameraSys.run(window);
-        PlyCntrlSys.run(1.f / 60.f);
-        EntMoveSys.run(1.f / 60.f);
+        PlyCntrlSys.run(dt);
+        EntMoveSys.run(dt);
 
         RenderSys.run(window);
 

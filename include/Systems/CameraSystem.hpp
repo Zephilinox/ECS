@@ -10,7 +10,7 @@
 #include "Constants.hpp"
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "Components/Sprite.hpp"
+#include "Components/Display.hpp"
 
 class CameraSystem
 {

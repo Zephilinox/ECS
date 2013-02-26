@@ -7,14 +7,14 @@ MovementSystem::MovementSystem()
 {
 }
 
-void MovementSystem::run(float argDT)
+void MovementSystem::run(double argDT)
 {
-    m_Ents = m_EntMan.getEntsByComponents<Velocity, Sprite>();
+    m_Ents = m_EntMan.getEntsByComponents<Movement, Display>();
 
     for (size_t i = 0; i < m_Ents.size(); ++i)
     {
-        zge::Vector vel = m_Ents[i]->component<Velocity>()->velocity;
+        zge::Vector vel = m_Ents[i]->component<Movement>()->velocity;
 
-        m_Ents[i]->component<Sprite>()->sprite.move(vel.x * argDT, vel.y * argDT);
+        m_Ents[i]->component<Display>()->sprite.move(vel.x * argDT, vel.y * argDT);
     }
 }

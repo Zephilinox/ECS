@@ -1,5 +1,5 @@
-#ifndef Velocity_HPP
-#define Velocity_HPP
+#ifndef Movement_HPP
+#define Movement_HPP
 
 //STD
 
@@ -10,12 +10,13 @@
 #include "Components/Component.hpp"
 #include "Vector.hpp"
 
-class Velocity : public Component
+class Movement : public Component
 {
 public:
-    Velocity();
+    Movement();
 
     zge::Vector velocity;
+    int acceleration;
 };
 
 #endif

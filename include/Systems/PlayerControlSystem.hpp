@@ -10,15 +10,15 @@
 #include "Constants.hpp"
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "Components/Velocity.hpp"
-#include "Components/Sprite.hpp"
+#include "Components/Movement.hpp"
+#include "Components/Display.hpp"
 #include "Vector.hpp"
 
 class PlayerControlSystem
 {
 public:
     PlayerControlSystem();
-    void run(float);
+    void run(double);
     void controlEntity(unsigned int);
 
 private:

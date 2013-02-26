@@ -1,8 +1,8 @@
-#include "Components/Sprite.hpp"
+#include "Components/Display.hpp"
 
-Sprite::Sprite()
+Display::Display()
 {
-    type = constant::Component::Sprite;
+    type = constant::Component::Display;
 
     if (m_Texture.loadFromFile("Textures/Blank.png"))
     {
@@ -10,9 +10,9 @@ Sprite::Sprite()
     }
 }
 
-Sprite::Sprite(std::string path)
+Display::Display(std::string path)
 {
-    type = constant::Component::Sprite;
+    type = constant::Component::Display;
 
     if (m_Texture.loadFromFile(path))
     {
@@ -20,7 +20,7 @@ Sprite::Sprite(std::string path)
     }
 }
 
-void Sprite::setTexture(std::string path)
+void Display::setTexture(std::string path)
 {
     if (m_Texture.loadFromFile(path))
     {

@@ -7,7 +7,7 @@ namespace constant
 
     enum Component
     {
-        Base = 0, Health, Velocity, Sprite
+        Base = 0, Health, Movement, Display
     };
 
     const int windowWidth = 800;

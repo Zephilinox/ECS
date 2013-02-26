@@ -8,38 +8,38 @@ PlayerControlSystem::PlayerControlSystem()
     //std::cout << "PCS Created\n";
 }
 
-void PlayerControlSystem::run(float argDT)
+void PlayerControlSystem::run(double argDT)
 {
     //std::cout << "ControlEntity Run\n";
 
-    if (m_Ent->hasComponent<Sprite, Velocity>())
+    if (m_Ent->hasComponent<Display, Movement>())
     {
         //std::cout << "doing stuff\n";
 
-        double entRadian = zge::degToRad(m_Ent->component<Sprite>()->sprite.getRotation());
+        double entRadian = zge::degToRad(m_Ent->component<Display>()->sprite.getRotation());
         double sinRadian = std::sin(entRadian);
         double cosRadian = std::cos(entRadian);
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
         {
-            m_Ent->component<Velocity>()->velocity.x += 300 * sinRadian * argDT;
-            m_Ent->component<Velocity>()->velocity.y += -1 * 300 * cosRadian * argDT;
+            m_Ent->component<Movement>()->velocity.x += 300 * sinRadian * argDT;
+            m_Ent->component<Movement>()->velocity.y += -1 * 300 * cosRadian * argDT;
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
         {
-            m_Ent->component<Sprite>()->sprite.rotate(-300 * argDT);
+            m_Ent->component<Display>()->sprite.rotate(-300 * argDT);
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
         {
-            m_Ent->component<Velocity>()->velocity.x += -1 * 300 * sinRadian * argDT;
-            m_Ent->component<Velocity>()->velocity.y += 300 * cosRadian * argDT;
+            m_Ent->component<Movement>()->velocity.x += -1 * 300 * sinRadian * argDT;
+            m_Ent->component<Movement>()->velocity.y += 300 * cosRadian * argDT;
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
         {
-            m_Ent->component<Sprite>()->sprite.rotate(300 * argDT);
+            m_Ent->component<Display>()->sprite.rotate(300 * argDT);
         }
     }
     else
