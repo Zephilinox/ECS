@@ -10,13 +10,15 @@ PlayerControlSystem::PlayerControlSystem()
 void PlayerControlSystem::run(float argDT)
 {
     std::cout << "ControlEntity Run\n";
-    if (m_Ent->hasComponent<SpriteComponent, VelocityComponent>() == false)
-    {
-        m_Ent = nullptr;
-    }
 
     if (m_Ent != nullptr)
     {
+        if (m_Ent->hasComponent<SpriteComponent, VelocityComponent>() == false)
+        {
+            m_Ent = nullptr;
+            break;
+        }
+    
         double entRadian = zge::degToRad(m_Ent->component<SpriteComponent>()->sprite.getRotation());
         double sinRadian = std::sin(entRadian);
         double cosRadian = std::cos(entRadian);
