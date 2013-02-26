@@ -20,7 +20,7 @@ bool EntityManager::deleteEntity(unsigned int argID)
 {
     for (unsigned int i = 0; i < m_Entities.size(); ++i)
     {
-        if (m_Entities.at(i)->id == argID)
+        if (m_Entities[i]->id == argID)
         {
             m_Entities.erase(m_Entities.begin() + i);
             return true;
@@ -34,9 +34,9 @@ std::shared_ptr<Entity> EntityManager::getEntByID(unsigned int argID)
 {
     for (unsigned int i = 0; i < m_Entities.size(); ++i)
     {
-        if (m_Entities.at(i)->id == argID)
+        if (m_Entities[i]->id == argID)
         {
-            return m_Entities.at(i);
+            return m_Entities[i];
         }
     }
 

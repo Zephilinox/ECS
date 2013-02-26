@@ -1,29 +1,29 @@
-#ifndef RENDERSYSTEM_HPP
-#define RENDERSYSTEM_HPP
+#ifndef CAMERASYSTEM_HPP
+#define CAMERASYSTEM_HPP
 
 //STD
-#include <iostream>
-#include <vector>
-#include <memory>
 
 //3RD
 #include <SFML/Graphics.hpp>
 
 //SELF
+#include "Constants.hpp"
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "Component.hpp"
 #include "SpriteComponent.hpp"
 
-class RenderSystem
+class CameraSystem
 {
 public:
-    RenderSystem();
+    CameraSystem();
     void run(sf::RenderWindow&);
+    void followEntity(unsigned int);
 
 private:
-    static std::vector<std::shared_ptr<Entity>> m_Ents;
+    sf::View m_Camera;
+    static std::shared_ptr<Entity> m_Ent;
     static EntityManager m_EntMan;
+
 };
 
 #endif

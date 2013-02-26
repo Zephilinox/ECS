@@ -35,9 +35,9 @@ std::vector<std::shared_ptr<Entity>> EntityManager::getEntsByComponent()
 
     for (unsigned int i = 0; i < m_Entities.size(); ++i)
     {
-        if (m_Entities.at(i)->hasComponent<T>())
+        if (m_Entities[i]->hasComponent<T>())
         {
-            ents.push_back(m_Entities.at(i));
+            ents.push_back(m_Entities[i]);
         }
     }
 
@@ -53,10 +53,10 @@ template <class T, class... Other> std::vector<std::shared_ptr<Entity>> EntityMa
     for (unsigned int i = 0; i < m_Entities.size(); ++i)
     {
         //std::cout << "calling hasComponent<T, Other...>()\n";
-        if (m_Entities.at(i)->hasComponent<T, Other...>())
+        if (m_Entities[i]->hasComponent<T, Other...>())
         {
-            //std::cout << "pushing back Ent " << m_Entities.at(i)->id << "\n";
-            ents.push_back(m_Entities.at(i));
+            //std::cout << "pushing back Ent " << m_Entities[i]->id << "\n";
+            ents.push_back(m_Entities[i]);
         }
     }
 
