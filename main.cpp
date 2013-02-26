@@ -13,7 +13,7 @@
 #include "Systems/RenderSystem.hpp"
 #include "Systems/CameraSystem.hpp"
 #include "Systems/PlayerControlSystem.hpp"
-#include "Systems/EntityMovementSystem.hpp"
+#include "Systems/MovementSystem.hpp"
 
 #include "Components/Component.hpp"
 #include "Components/Health.hpp"
@@ -24,7 +24,7 @@ EntityManager EntMan;
 RenderSystem RenderSys;
 CameraSystem CameraSys;
 PlayerControlSystem PlyCntrlSys;
-EntityMovementSystem EntMoveSys;
+MovementSystem EntMoveSys;
 
 int main()
 {

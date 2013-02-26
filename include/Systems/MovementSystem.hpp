@@ -1,5 +1,5 @@
-#ifndef ENTITYMOVEMENTSYSTEM_HPP
-#define ENTITYMOVEMENTSYSTEM_HPP
+#ifndef MovementSystem_HPP
+#define MovementSystem_HPP
 
 //STD
 
@@ -14,10 +14,10 @@
 #include "Components/Sprite.hpp"
 #include "Vector.hpp"
 
-class EntityMovementSystem
+class MovementSystem
 {
 public:
-    EntityMovementSystem();
+    MovementSystem();
     void run(float);
 private:
     static std::vector<std::shared_ptr<Entity>> m_Ents;

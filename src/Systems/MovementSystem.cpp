@@ -1,13 +1,13 @@
-#include "Systems/EntityMovementSystem.hpp"
+#include "Systems/MovementSystem.hpp"
 
-std::vector<std::shared_ptr<Entity>> EntityMovementSystem::m_Ents;
-EntityManager EntityMovementSystem::m_EntMan;
+std::vector<std::shared_ptr<Entity>> MovementSystem::m_Ents;
+EntityManager MovementSystem::m_EntMan;
 
-EntityMovementSystem::EntityMovementSystem()
+MovementSystem::MovementSystem()
 {
 }
 
-void EntityMovementSystem::run(float argDT)
+void MovementSystem::run(float argDT)
 {
     m_Ents = m_EntMan.getEntsByComponents<Velocity, Sprite>();
 

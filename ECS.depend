@@ -387,3 +387,21 @@
 1361906085 source:z:\programming\c++\github repositories\ecs\src\components\component.cpp
 	"Components/Component.hpp"
 
+1361906245 source:z:\programming\c++\github repositories\ecs\src\components\health.cpp
+	"Components/Health.hpp"
+
+1361906245 source:z:\programming\c++\github repositories\ecs\src\components\sprite.cpp
+	"Components/Sprite.hpp"
+
+1361906245 source:z:\programming\c++\github repositories\ecs\src\components\velocity.cpp
+	"Components/Velocity.hpp"
+
+1361906245 source:z:\programming\c++\github repositories\ecs\src\systems\camerasystem.cpp
+	"Systems/CameraSystem.hpp"
+
+1361906245 source:z:\programming\c++\github repositories\ecs\src\systems\playercontrolsystem.cpp
+	"Systems/PlayerControlSystem.hpp"
+
+1361906245 source:z:\programming\c++\github repositories\ecs\src\systems\rendersystem.cpp
+	"Systems/RenderSystem.hpp"
+
