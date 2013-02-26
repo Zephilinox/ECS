@@ -72,13 +72,11 @@ int main()
 
         window.clear(sf::Color(40, 40, 40));
 
-        CameraSys.run(window);
         PlyCntrlSys.run(dt);
         EntMoveSys.run(dt);
 
+        CameraSys.run(window);
         RenderSys.run(window);
-
-
 
         window.display();
     }
