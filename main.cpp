@@ -26,13 +26,10 @@ CameraSystem CameraSys;
 PlayerControlSystem PlyCntrlSys;
 MovementSystem EntMoveSys;
 
-sf::Clock PrevFrameTime;
-double dt;
-
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(constant::windowWidth, constant::windowHeight), "Entity Component System");
-    window.setVerticalSyncEnabled(true);
+    window.setFramerateLimit(120);
 
     std::shared_ptr<Entity> Ent1 = EntMan.createEntity();
 
@@ -56,31 +53,60 @@ int main()
 
     CameraSys.followEntity(Ent1->id);
     PlyCntrlSys.controlEntity(Ent1->id);
+
     RenderSys.debug = true;
+
+    // Records amount of time it took to process one game loop
+    sf::Clock prevFrameTime;
+
+    // Stores any left over time
+    double accumulatedTime = 0;
+
+    // Stores the amount of seconds it took to process the previous game loop
+    double dt = 0;
+
+    //number of updates per second
+    double timeStep = 1.f / 100.f;
+
+    //updates per second / frameSkip = logic limit for FPS, if FPS goes below the result then logic slows down, not just drawing
+
+    int frameSkip = 20;
 
     while (window.isOpen())
     {
-        dt = PrevFrameTime.getElapsedTime().asSeconds();
-        PrevFrameTime.restart();
+        dt = prevFrameTime.restart().asMicroseconds() / 1000000.f; //accurate seconds
+        std::cout << "FPS: " << 1.f / dt << "\n";
+        accumulatedTime += dt;
+        std::cout << "accTime: " << accumulatedTime << "\n";
 
-        sf::Event event;
-        while (window.pollEvent(event))
+        int loops = 0;
+
+        while (accumulatedTime >= timeStep && loops <= frameSkip)
         {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    window.close();
+            }
+
+            PlyCntrlSys.run(timeStep);
+            EntMoveSys.run(timeStep);
+
+            accumulatedTime -= timeStep;
+            loops++;
         }
 
-        window.clear(sf::Color(40, 40, 40));
 
-        PlyCntrlSys.run(dt);
-        EntMoveSys.run(dt);
+        std::cout << "Updates: " << loops << "\n";
+
+        window.clear(sf::Color(40, 40, 40));
 
         CameraSys.run(window);
         RenderSys.run(window);
 
         window.display();
     }
-
 
     return 0;
 }
