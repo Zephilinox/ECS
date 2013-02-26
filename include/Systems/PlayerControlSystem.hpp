@@ -10,8 +10,8 @@
 #include "Constants.hpp"
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "VelocityComponent.hpp"
-#include "SpriteComponent.hpp"
+#include "Components/Velocity.hpp"
+#include "Components/Sprite.hpp"
 #include "Vector.hpp"
 
 class PlayerControlSystem

@@ -10,15 +10,15 @@
 #include "EntityManager.hpp"
 #include "Entity.hpp"
 
-#include "RenderSystem.hpp"
-#include "CameraSystem.hpp"
-#include "PlayerControlSystem.hpp"
-#include "EntityMovementSystem.hpp"
+#include "Systems/RenderSystem.hpp"
+#include "Systems/CameraSystem.hpp"
+#include "Systems/PlayerControlSystem.hpp"
+#include "Systems/EntityMovementSystem.hpp"
 
-#include "Component.hpp"
-#include "HealthComponent.hpp"
-#include "VelocityComponent.hpp"
-#include "SpriteComponent.hpp"
+#include "Components/Component.hpp"
+#include "Components/Health.hpp"
+#include "Components/Velocity.hpp"
+#include "Components/Sprite.hpp"
 
 EntityManager EntMan;
 RenderSystem RenderSys;
@@ -28,23 +28,25 @@ EntityMovementSystem EntMoveSys;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(constant::windowWidth, constant::windowHeight), "Template");
+    sf::RenderWindow window(sf::VideoMode(constant::windowWidth, constant::windowHeight), "Entity Component System");
     window.setVerticalSyncEnabled(true);
 
     std::shared_ptr<Entity> Ent1 = EntMan.createEntity();
 
     {
-        std::shared_ptr<SpriteComponent> Ent1Sprite = Ent1->component<SpriteComponent>();
-        Ent1Sprite->setTexture("Textures/Asteroid.png");
+        std::shared_ptr<Sprite> Ent1Sprite = Ent1->component<Sprite>();
+        //Ent1Sprite->setTexture("Textures/Asteroid.png");
         Ent1Sprite->sprite.setOrigin(Ent1Sprite->sprite.getTexture()->getSize().x / 2, Ent1Sprite->sprite.getTexture()->getSize().y / 2);
         Ent1Sprite->sprite.setPosition(constant::windowWidth / 2, constant::windowHeight / 2);
     }
 
+    Ent1->component<Velocity>();
+
     std::shared_ptr<Entity> Ent2 = EntMan.createEntity();
 
     {
-        std::shared_ptr<SpriteComponent> Ent2Sprite = Ent2->component<SpriteComponent>();
-        //Ent2Sprite->setTexture("Textures/Asteroid.png");
+        std::shared_ptr<Sprite> Ent2Sprite = Ent2->component<Sprite>();
+        Ent2Sprite->setTexture("Textures/Asteroid.png");
         Ent2Sprite->sprite.setOrigin(Ent2Sprite->sprite.getTexture()->getSize().x / 2, Ent2Sprite->sprite.getTexture()->getSize().y / 2);
         Ent2Sprite->sprite.setPosition(constant::windowWidth / 4, constant::windowHeight / 4);
     }
@@ -52,7 +54,7 @@ int main()
 
     CameraSys.followEntity(Ent1->id);
     PlyCntrlSys.controlEntity(Ent1->id);
-
+    RenderSys.debug = true;
     while (window.isOpen())
     {
         sf::Event event;
@@ -62,19 +64,15 @@ int main()
                 window.close();
         }
 
-        //Ent1->component<HealthComponent>()->health++;
-
-        window.clear(sf::Color(100, 255, 100));
+        window.clear(sf::Color(40, 40, 40));
 
         CameraSys.run(window);
         PlyCntrlSys.run(1.f / 60.f);
         EntMoveSys.run(1.f / 60.f);
 
-        //Ent1->component<SpriteComponent>()->sprite.setPosition(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y);
-        //std::cout << Ent1->component<SpriteComponent>()->sprite.getPosition().x << "(" << sf::Mouse::getPosition(window).x << ") " << Ent1->component<SpriteComponent>()->sprite.getPosition().y << "(" << sf::Mouse::getPosition(window).y << ")\n";
         RenderSys.run(window);
 
-        //std::cout << Ent1->component<HealthComponent>()->health << "\n";
+
 
         window.display();
     }

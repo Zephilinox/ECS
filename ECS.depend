@@ -11,7 +11,7 @@
 1361786626 source:z:\programming\c++\github repositories\ecs\src\healthcomponent.cpp
 	"HealthComponent.hpp"
 
-1361836052 source:z:\programming\c++\github repositories\ecs\src\rendersystem.cpp
+1361905446 source:z:\programming\c++\github repositories\ecs\src\rendersystem.cpp
 	"RenderSystem.hpp"
 
 1360655783 source:z:\programming\c++\github repositories\ecs\src\shipfactory.cpp
@@ -26,7 +26,7 @@
 1361786630 source:z:\programming\c++\github repositories\ecs\src\velocitycomponent.cpp
 	"VelocityComponent.hpp"
 
-1361862497 source:z:\programming\c++\github repositories\ecs\main.cpp
+1361905865 source:z:\programming\c++\github repositories\ecs\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Constants.hpp"
@@ -37,9 +37,9 @@
 	"PlayerControlSystem.hpp"
 	"EntityMovementSystem.hpp"
 	"Component.hpp"
-	"HealthComponent.hpp"
-	"VelocityComponent.hpp"
-	"SpriteComponent.hpp"
+	"Health.hpp"
+	"Velocity.hpp"
+	"Sprite.hpp"
 
 1359117180 z:\programming\c++\sfml2 - install\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -378,9 +378,12 @@
 1361861742 source:z:\programming\c++\github repositories\ecs\src\camerasystem.cpp
 	"CameraSystem.hpp"
 
-1361862173 source:z:\programming\c++\github repositories\ecs\src\entitymovementsystem.cpp
+1361901684 source:z:\programming\c++\github repositories\ecs\src\entitymovementsystem.cpp
 	"EntityMovementSystem.hpp"
 
-1361864343 source:z:\programming\c++\github repositories\ecs\src\playercontrolsystem.cpp
+1361904162 source:z:\programming\c++\github repositories\ecs\src\playercontrolsystem.cpp
 	"PlayerControlSystem.hpp"
+
+1361906085 source:z:\programming\c++\github repositories\ecs\src\components\component.cpp
+	"Components/Component.hpp"
 

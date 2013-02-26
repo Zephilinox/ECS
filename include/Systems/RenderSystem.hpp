@@ -12,18 +12,21 @@
 //SELF
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "Component.hpp"
-#include "SpriteComponent.hpp"
+#include "Components/Component.hpp"
+#include "Components/Sprite.hpp"
+#include "Components/Velocity.hpp"
 
 class RenderSystem
 {
 public:
     RenderSystem();
     void run(sf::RenderWindow&);
+    static bool debug;
 
 private:
     static std::vector<std::shared_ptr<Entity>> m_Ents;
     static EntityManager m_EntMan;
+
 };
 
 #endif

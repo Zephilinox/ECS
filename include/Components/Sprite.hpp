@@ -1,5 +1,5 @@
-#ifndef SPRITECOMPONENT_HPP
-#define SPRITECOMPONENT_HPP
+#ifndef Sprite_HPP
+#define Sprite_HPP
 
 //STD
 #include <string>
@@ -10,13 +10,13 @@
 
 //SELF
 #include "Constants.hpp"
-#include "Component.hpp"
+#include "Components/Component.hpp"
 
-class SpriteComponent : public Component
+class Sprite : public Component
 {
 public:
-    SpriteComponent();
-    SpriteComponent(std::string);
+    Sprite();
+    Sprite(std::string);
 
     void setTexture(std::string);
 

@@ -48,19 +48,19 @@ template <class T, class... Other> std::vector<std::shared_ptr<Entity>> EntityMa
 {
     std::vector<std::shared_ptr<Entity>> ents;
 
-    std::cout << "GetComps Start\n";
+    //std::cout << "GetComps Start\n";
 
     for (unsigned int i = 0; i < m_Entities.size(); ++i)
     {
-        std::cout << "calling hasComponent<T, Other...>()\n";
+        //std::cout << "calling hasComponent<T, Other...>()\n";
         if (m_Entities[i]->hasComponent<T, Other...>())
         {
-            std::cout << "pushing back Ent " << m_Entities[i]->id << "\n";
+            //std::cout << "pushing back Ent " << m_Entities[i]->id << "\n";
             ents.push_back(m_Entities[i]);
         }
     }
 
-    std::cout << "GetComps End\n";
+    //std::cout << "GetComps End\n";
     return ents;
 }
 
