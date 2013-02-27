@@ -71,32 +71,30 @@
 		</Linker>
 		<Unit filename="Textures/Asteroid.png" />
 		<Unit filename="Textures/Blank.png" />
-		<Unit filename="include/CameraSystem.hpp" />
-		<Unit filename="include/Component.hpp" />
+		<Unit filename="include/Components/Component.hpp" />
+		<Unit filename="include/Components/Display.hpp" />
+		<Unit filename="include/Components/Health.hpp" />
+		<Unit filename="include/Components/Movement.hpp" />
 		<Unit filename="include/Constants.hpp" />
 		<Unit filename="include/Entity.hpp" />
 		<Unit filename="include/EntityManager.hpp" />
-		<Unit filename="include/EntityMovementSystem.hpp" />
-		<Unit filename="include/HealthComponent.hpp" />
-		<Unit filename="include/PlayerControlSystem.hpp" />
-		<Unit filename="include/RenderSystem.hpp" />
-		<Unit filename="include/ShipFactory.hpp" />
-		<Unit filename="include/SpriteComponent.hpp" />
+		<Unit filename="include/Systems/CameraSystem.hpp" />
+		<Unit filename="include/Systems/MovementSystem.hpp" />
+		<Unit filename="include/Systems/PlayerControlSystem.hpp" />
+		<Unit filename="include/Systems/RenderSystem.hpp" />
 		<Unit filename="include/Vector.hpp" />
-		<Unit filename="include/VelocityComponent.hpp" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/CameraSystem.cpp" />
-		<Unit filename="src/Component.cpp" />
+		<Unit filename="src/Components/Component.cpp" />
+		<Unit filename="src/Components/Display.cpp" />
+		<Unit filename="src/Components/Health.cpp" />
+		<Unit filename="src/Components/Movement.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/EntityManager.cpp" />
-		<Unit filename="src/EntityMovementSystem.cpp" />
-		<Unit filename="src/HealthComponent.cpp" />
-		<Unit filename="src/PlayerControlSystem.cpp" />
-		<Unit filename="src/RenderSystem.cpp" />
-		<Unit filename="src/ShipFactory.cpp" />
-		<Unit filename="src/SpriteComponent.cpp" />
+		<Unit filename="src/Systems/CameraSystem.cpp" />
+		<Unit filename="src/Systems/MovementSystem.cpp" />
+		<Unit filename="src/Systems/PlayerControlSystem.cpp" />
+		<Unit filename="src/Systems/RenderSystem.cpp" />
 		<Unit filename="src/Vector.cpp" />
-		<Unit filename="src/VelocityComponent.cpp" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="0" line="0" />

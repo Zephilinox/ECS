@@ -59,29 +59,33 @@ int main()
     // Records amount of time it took to process one game loop
     sf::Clock prevFrameTime;
 
-    // Stores any left over time
-    double accumulatedTime = 0;
+    // Accumulates dt
+    double accDT = 0;
 
     // Stores the amount of seconds it took to process the previous game loop
     double dt = 0;
 
-    //number of updates per second
+    // Number of updates per second
     double timeStep = 1.f / 100.f;
 
-    //updates per second / frameSkip = logic limit for FPS, if FPS goes below the result then logic slows down, not just drawing
-
+    // updates per second / frameSkip = logic limit for FPS, if FPS goes below the result then logic slows down, not just drawing
     int frameSkip = 20;
+
+    // Number of logic updates per frame
+    int loops = 0;
+
+    // Determines if we should re-draw or not
+    bool updated = true;
 
     while (window.isOpen())
     {
         dt = prevFrameTime.restart().asMicroseconds() / 1000000.f; //accurate seconds
-        std::cout << "FPS: " << 1.f / dt << "\n";
-        accumulatedTime += dt;
-        std::cout << "accTime: " << accumulatedTime << "\n";
+        //std::cout << "FPS: " << 1.f / dt << "\n";
+        accDT += dt;
+        //std::cout << "accTime: " << accDT << "\n";
 
-        int loops = 0;
-
-        while (accumulatedTime >= timeStep && loops <= frameSkip)
+        // This basically processes our accumulated dt, consuming it and running a logic update
+        while (accDT >= timeStep && loops <= frameSkip)
         {
             sf::Event event;
             while (window.pollEvent(event))
@@ -93,19 +97,26 @@ int main()
             PlyCntrlSys.run(timeStep);
             EntMoveSys.run(timeStep);
 
-            accumulatedTime -= timeStep;
+            accDT -= timeStep;
+            updated = true;
             loops++;
         }
+        //std::cout << "Updates: " << loops << "\n";
 
+        // ensures we don't keep rendering the same frame, wasting time.
+        if (updated)
+        {
+            window.clear(sf::Color(40, 40, 40));
 
-        std::cout << "Updates: " << loops << "\n";
+            CameraSys.run(window);
+            RenderSys.run(window);
 
-        window.clear(sf::Color(40, 40, 40));
+            window.display();
 
-        CameraSys.run(window);
-        RenderSys.run(window);
+            updated = false;
+        }
 
-        window.display();
+        loops = 0;
     }
 
     return 0;
