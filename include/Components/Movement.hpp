@@ -8,7 +8,7 @@
 //SELF
 #include "Constants.hpp"
 #include "Components/Component.hpp"
-#include "Vector.hpp"
+#include "Utility/Vector.hpp"
 
 class Movement : public Component
 {

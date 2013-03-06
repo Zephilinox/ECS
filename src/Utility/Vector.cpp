@@ -1,4 +1,4 @@
-#include "Vector.hpp"
+#include "Utility/Vector.hpp"
 
 using namespace zge;
 
@@ -121,9 +121,12 @@ Vector& Vector::operator/=(const double argScalar)
     return *this;
 }
 
-double Vector::dot(const Vector& argVec)
+double Vector::dot(Vector& argVec)
 {
-    return (x + argVec.x) * (y + argVec.y);
+    zge::Vector me = this->normalized();
+    zge::Vector norm = argVec.normalized();
+
+    return (me.x * norm.x) + (me.y * norm.y);
 }
 
 double Vector::length()

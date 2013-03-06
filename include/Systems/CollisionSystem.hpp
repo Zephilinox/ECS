@@ -1,23 +1,25 @@
-#ifndef MovementSystem_HPP
-#define MovementSystem_HPP
+#ifndef COLLISIONSYSTEM_HPP
+#define COLLISIONSYSTEM_HPP
 
 //STD
+#include <iostream>
+#include <vector>
 
 //3RD
 #include <SFML/Graphics.hpp>
 
 //SELF
-#include "Constants.hpp"
 #include "EntityManager.hpp"
 #include "Entity.hpp"
-#include "Components/Movement.hpp"
-#include "Components/Display.hpp"
-#include "Utility/Vector.hpp"
 
-class MovementSystem
+#include "Components/Display.hpp"
+#include "Components/Flags.hpp"
+#include "Components/Movement.hpp"
+
+class CollisionSystem
 {
 public:
-    MovementSystem();
+    CollisionSystem();
     void run(double);
 private:
     static std::vector<std::shared_ptr<Entity>> m_Ents;

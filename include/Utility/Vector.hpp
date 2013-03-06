@@ -41,7 +41,7 @@ namespace zge
         double x;
         double y;
 
-        double dot(const Vector& vec);
+        double dot(Vector& vec);
         double length();
         double squaredLength();
         void normalize();

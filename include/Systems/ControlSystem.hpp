@@ -1,30 +1,32 @@
-#ifndef PLAYERCONTROLSYSTEM_HPP
-#define PLAYERCONTROLSYSTEM_HPP
+#ifndef CONTROLSYSTEM_HPP
+#define CONTROLSYSTEM_HPP
 
 //STD
+#include <vector>
 
 //3RD
 #include <SFML/Graphics.hpp>
 
 //SELF
 #include "Constants.hpp"
+
 #include "EntityManager.hpp"
 #include "Entity.hpp"
+
 #include "Components/Movement.hpp"
 #include "Components/Display.hpp"
-#include "Vector.hpp"
+#include "Components/Flags.hpp"
 
-class PlayerControlSystem
+#include "Utility/Vector.hpp"
+
+class ControlSystem
 {
 public:
-    PlayerControlSystem();
+    ControlSystem();
     void run(double);
-    void controlEntity(unsigned int);
-
 private:
-    static std::shared_ptr<Entity> m_Ent;
+    static std::vector<std::shared_ptr<Entity>> m_Ents;
     static EntityManager m_EntMan;
-
 };
 
 #endif

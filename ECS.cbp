@@ -13,9 +13,11 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-pg" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
+					<Add option="-pg -lgmon" />
 					<Add library="sfml-audio-d" />
 					<Add library="sfml-graphics-d" />
 					<Add library="sfml-window-d" />
@@ -36,8 +38,9 @@
 			<Target title="Release">
 				<Option output="bin/Release/ECS" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
-				<Option type="0" />
+				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -69,30 +72,44 @@
 		<Linker>
 			<Add directory="Z:/Programming/C++/SFML2 - Install/lib" />
 		</Linker>
-		<Unit filename="Textures/Asteroid.png" />
 		<Unit filename="Textures/Blank.png" />
+		<Unit filename="Textures/Dirt.png" />
+		<Unit filename="Textures/Error.png" />
+		<Unit filename="Textures/Grass.png" />
+		<Unit filename="Textures/Player.png" />
+		<Unit filename="Textures/Sky.png" />
 		<Unit filename="include/Components/Component.hpp" />
 		<Unit filename="include/Components/Display.hpp" />
+		<Unit filename="include/Components/Flags.hpp" />
 		<Unit filename="include/Components/Health.hpp" />
 		<Unit filename="include/Components/Movement.hpp" />
 		<Unit filename="include/Constants.hpp" />
 		<Unit filename="include/Entity.hpp" />
 		<Unit filename="include/EntityManager.hpp" />
+		<Unit filename="include/Factories/PlayerFactory.hpp" />
+		<Unit filename="include/MapManager.hpp" />
+		<Unit filename="include/ResourceManager.hpp" />
 		<Unit filename="include/Systems/CameraSystem.hpp" />
+		<Unit filename="include/Systems/CollisionSystem.hpp" />
+		<Unit filename="include/Systems/ControlSystem.hpp" />
 		<Unit filename="include/Systems/MovementSystem.hpp" />
-		<Unit filename="include/Systems/PlayerControlSystem.hpp" />
 		<Unit filename="include/Systems/RenderSystem.hpp" />
 		<Unit filename="include/Vector.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Components/Component.cpp" />
 		<Unit filename="src/Components/Display.cpp" />
+		<Unit filename="src/Components/Flags.cpp" />
 		<Unit filename="src/Components/Health.cpp" />
 		<Unit filename="src/Components/Movement.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/EntityManager.cpp" />
+		<Unit filename="src/Factories/PlayerFactory.cpp" />
+		<Unit filename="src/MapManager.cpp" />
+		<Unit filename="src/ResourceManager.cpp" />
 		<Unit filename="src/Systems/CameraSystem.cpp" />
+		<Unit filename="src/Systems/CollisionSystem.cpp" />
+		<Unit filename="src/Systems/ControlSystem.cpp" />
 		<Unit filename="src/Systems/MovementSystem.cpp" />
-		<Unit filename="src/Systems/PlayerControlSystem.cpp" />
 		<Unit filename="src/Systems/RenderSystem.cpp" />
 		<Unit filename="src/Vector.cpp" />
 		<Extensions>

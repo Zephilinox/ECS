@@ -2,10 +2,10 @@
 1361652743 source:z:\programming\c++\github repositories\ecs\src\component.cpp
 	"Component.hpp"
 
-1361805423 source:z:\programming\c++\github repositories\ecs\src\entity.cpp
+1362560157 source:z:\programming\c++\github repositories\ecs\src\entity.cpp
 	"Entity.hpp"
 
-1361835006 source:z:\programming\c++\github repositories\ecs\src\entitymanager.cpp
+1362560470 source:z:\programming\c++\github repositories\ecs\src\entitymanager.cpp
 	"EntityManager.hpp"
 
 1361786626 source:z:\programming\c++\github repositories\ecs\src\healthcomponent.cpp
@@ -20,26 +20,33 @@
 1361787295 source:z:\programming\c++\github repositories\ecs\src\spritecomponent.cpp
 	"SpriteComponent.hpp"
 
-1361803956 source:z:\programming\c++\github repositories\ecs\src\vector.cpp
+1361980791 source:z:\programming\c++\github repositories\ecs\src\vector.cpp
 	"Vector.hpp"
 
 1361786630 source:z:\programming\c++\github repositories\ecs\src\velocitycomponent.cpp
 	"VelocityComponent.hpp"
 
-1361923394 source:z:\programming\c++\github repositories\ecs\main.cpp
+1362564296 source:z:\programming\c++\github repositories\ecs\main.cpp
 	<iostream>
+	<ctime>
+	<cmath>
+	<cstdlib>
 	<SFML/Graphics.hpp>
 	"Constants.hpp"
+	"ResourceManager.hpp"
 	"EntityManager.hpp"
 	"Entity.hpp"
 	"Systems/RenderSystem.hpp"
 	"Systems/CameraSystem.hpp"
-	"Systems/PlayerControlSystem.hpp"
 	"Systems/MovementSystem.hpp"
+	"Systems/ControlSystem.hpp"
+	"Systems/CollisionSystem.hpp"
 	"Components/Component.hpp"
 	"Components/Health.hpp"
 	"Components/Movement.hpp"
 	"Components/Display.hpp"
+	"Components/Flags.hpp"
+	"Factories/PlayerFactory.hpp"
 
 1359117180 z:\programming\c++\sfml2 - install\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -387,7 +394,7 @@
 1361906085 source:z:\programming\c++\github repositories\ecs\src\components\component.cpp
 	"Components/Component.hpp"
 
-1361906245 source:z:\programming\c++\github repositories\ecs\src\components\health.cpp
+1362164242 source:z:\programming\c++\github repositories\ecs\src\components\health.cpp
 	"Components/Health.hpp"
 
 1361906245 source:z:\programming\c++\github repositories\ecs\src\components\sprite.cpp
@@ -396,21 +403,54 @@
 1361906245 source:z:\programming\c++\github repositories\ecs\src\components\velocity.cpp
 	"Components/Velocity.hpp"
 
-1361908172 source:z:\programming\c++\github repositories\ecs\src\systems\camerasystem.cpp
+1362565193 source:z:\programming\c++\github repositories\ecs\src\systems\camerasystem.cpp
 	"Systems/CameraSystem.hpp"
 
-1361908210 source:z:\programming\c++\github repositories\ecs\src\systems\playercontrolsystem.cpp
+1361964657 source:z:\programming\c++\github repositories\ecs\src\systems\playercontrolsystem.cpp
 	"Systems/PlayerControlSystem.hpp"
 
-1361908245 source:z:\programming\c++\github repositories\ecs\src\systems\rendersystem.cpp
+1362565174 source:z:\programming\c++\github repositories\ecs\src\systems\rendersystem.cpp
 	"Systems/RenderSystem.hpp"
 
-1361908182 source:z:\programming\c++\github repositories\ecs\src\systems\movementsystem.cpp
+1362561092 source:z:\programming\c++\github repositories\ecs\src\systems\movementsystem.cpp
 	"Systems/MovementSystem.hpp"
 
-1361907937 source:z:\programming\c++\github repositories\ecs\src\components\display.cpp
+1362164237 source:z:\programming\c++\github repositories\ecs\src\components\display.cpp
 	"Components/Display.hpp"
 
-1361908163 source:z:\programming\c++\github repositories\ecs\src\components\movement.cpp
+1362558813 source:z:\programming\c++\github repositories\ecs\src\components\movement.cpp
 	"Components/Movement.hpp"
+
+1362164240 source:z:\programming\c++\github repositories\ecs\src\components\flags.cpp
+	"Components/Flags.hpp"
+
+1361964942 source:z:\programming\c++\github repositories\ecs\src\components\ai.cpp
+	"Components/AI.hpp"
+
+1362036907 source:z:\programming\c++\github repositories\ecs\src\systems\aicontrolsystem.cpp
+	"Systems/AIControlSystem.hpp"
+
+1362160984 source:z:\programming\c++\github repositories\ecs\src\factory\playerfactory.cpp
+	"Factory/PlayerFactory.hpp"
+
+1362564749 source:z:\programming\c++\github repositories\ecs\src\factories\playerfactory.cpp
+	"Factories/PlayerFactory.hpp"
+
+1362563063 source:z:\programming\c++\github repositories\ecs\src\resourcemanager.cpp
+	"ResourceManager.hpp"
+
+1362174675 source:z:\programming\c++\github repositories\ecs\src\controlsystem.cpp
+	"ControlSystem.hpp"
+
+1362565332 source:z:\programming\c++\github repositories\ecs\src\systems\controlsystem.cpp
+	"Systems/ControlSystem.hpp"
+
+1362320725 source:z:\programming\c++\github repositories\ecs\src\mapmanager.cpp
+	"MapManager.hpp"
+
+1362558644 source:z:\programming\c++\github repositories\ecs\src\systems\collisionsystem.cpp
+	"Systems/CollisionSystem.hpp"
+
+1362564358 source:z:\programming\c++\github repositories\ecs\src\utility\vector.cpp
+	"Utility/Vector.hpp"
 

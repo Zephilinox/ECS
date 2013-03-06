@@ -2,17 +2,13 @@
 
 Display::Display()
 {
-    type = constant::Component::Display;
+    type = constant::Comp::Display;
 
-    if (m_Texture.loadFromFile("Textures/Blank.png"))
-    {
-        sprite.setTexture(m_Texture);
-    }
 }
 
 Display::Display(std::string path)
 {
-    type = constant::Component::Display;
+    type = constant::Comp::Display;
 
     if (m_Texture.loadFromFile(path))
     {

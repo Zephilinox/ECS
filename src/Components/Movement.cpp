@@ -3,5 +3,5 @@
 Movement::Movement():
 velocity(0, 0)
 {
-    type = constant::Component::Movement;
+    type = constant::Comp::Movement;
 }

@@ -3,5 +3,5 @@
 Health::Health():
 health(0)
 {
-    type = constant::Component::Health;
+    type = constant::Comp::Health;
 }

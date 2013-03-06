@@ -15,52 +15,48 @@ class EntityManager
 {
 public:
     EntityManager();
-    std::shared_ptr<Entity> createEntity();
-    bool deleteEntity(unsigned int);
+    std::shared_ptr<Entity>& createEnt();
+    std::shared_ptr<Entity>& addEnt(Entity);
+    bool deleteEnt(unsigned int);
 
-    template <class T> std::vector<std::shared_ptr<Entity>> getEntsByComponent();
-    template <class T, class... Other> std::vector<std::shared_ptr<Entity>> getEntsByComponents();
+    template <class T> std::vector<std::shared_ptr<Entity>> getEntsByComp();
+    template <class T, class... Other> std::vector<std::shared_ptr<Entity>> getEntsByComps();
 
-    std::shared_ptr<Entity> getEntByID(unsigned int);
-
+    std::shared_ptr<Entity>& getEntByID(unsigned int);
+    static std::shared_ptr<Entity> nullEnt;
 private:
-    static std::vector<std::shared_ptr<Entity>> m_Entities;
-    static unsigned int m_EntityCount;
+    static std::vector<std::shared_ptr<Entity>> m_Ents;
+    static unsigned int m_EntCount;
 };
 
 template <class T>
-std::vector<std::shared_ptr<Entity>> EntityManager::getEntsByComponent()
+std::vector<std::shared_ptr<Entity>> EntityManager::getEntsByComp()
 {
     std::vector<std::shared_ptr<Entity>> ents;
 
-    for (unsigned int i = 0; i < m_Entities.size(); ++i)
+    for (unsigned int i = 0; i < m_Ents.size(); ++i)
     {
-        if (m_Entities[i]->hasComponent<T>())
+        if (m_Ents[i]->hasComp<T>())
         {
-            ents.push_back(m_Entities[i]);
+            ents.push_back(m_Ents[i]);
         }
     }
 
     return ents;
 }
 
-template <class T, class... Other> std::vector<std::shared_ptr<Entity>> EntityManager::getEntsByComponents()
+template <class T, class... Other> std::vector<std::shared_ptr<Entity>> EntityManager::getEntsByComps()
 {
     std::vector<std::shared_ptr<Entity>> ents;
 
-    //std::cout << "GetComps Start\n";
-
-    for (unsigned int i = 0; i < m_Entities.size(); ++i)
+    for (unsigned int i = 0; i < m_Ents.size(); ++i)
     {
-        //std::cout << "calling hasComponent<T, Other...>()\n";
-        if (m_Entities[i]->hasComponent<T, Other...>())
+        if (m_Ents[i]->hasComps<T, Other...>())
         {
-            //std::cout << "pushing back Ent " << m_Entities[i]->id << "\n";
-            ents.push_back(m_Entities[i]);
+            ents.push_back(m_Ents[i]);
         }
     }
 
-    //std::cout << "GetComps End\n";
     return ents;
 }
 

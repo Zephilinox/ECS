@@ -14,7 +14,7 @@ public:
     Component();
     virtual ~Component();
     Component& operator=(const Component&);
-    constant::Component type = constant::Component::Base;
+    constant::Comp type = constant::Comp::Base;
 };
 
 #endif

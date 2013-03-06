@@ -3,16 +3,23 @@
 
 namespace constant
 {
-    const double pi = 3.141592653;
-
-    enum Component
+    enum Comp
     {
-        Base = 0, Health, Movement, Display
+        Base = 0, Health, Movement, Display, Flags
     };
 
-    const int windowWidth = 800;
-    const int windowHeight = 800;
-    const int maxComponents = 128;
+    enum Flag
+    {
+        Player = 0, Collidable, Tile, Solid
+    };
+
+    const double pi = 3.141592653;
+
+    const int windowWidth = 768;
+    const int windowHeight = 768;
+
+    const int maxComps = 128;
+    const int maxFlags = 32;
 }
 
 

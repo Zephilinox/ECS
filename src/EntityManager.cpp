@@ -1,28 +1,39 @@
 #include "EntityManager.hpp"
 
-std::vector<std::shared_ptr<Entity>> EntityManager::m_Entities;
+std::shared_ptr<Entity>  EntityManager::nullEnt;
+std::vector<std::shared_ptr<Entity>> EntityManager::m_Ents;
 
-unsigned int EntityManager::m_EntityCount = 0;
+unsigned int EntityManager::m_EntCount = 0;
 
 EntityManager::EntityManager()
 {
+    this->nullEnt = nullptr;
 }
 
-std::shared_ptr<Entity> EntityManager::createEntity()
+std::shared_ptr<Entity>& EntityManager::createEnt()
 {
-    std::shared_ptr<Entity> ent(new Entity(++m_EntityCount));
+    std::shared_ptr<Entity> ent(new Entity(++m_EntCount));
 
-    m_Entities.push_back(ent);
-    return m_Entities.back();
+    m_Ents.push_back(ent);
+    return m_Ents.back();
 }
 
-bool EntityManager::deleteEntity(unsigned int argID)
+std::shared_ptr<Entity>& EntityManager::addEnt(Entity argEnt)
 {
-    for (unsigned int i = 0; i < m_Entities.size(); ++i)
+    std::shared_ptr<Entity> ent(new Entity(argEnt));
+    ent->id = ++m_EntCount;
+    m_Ents.push_back(ent);
+
+    return m_Ents.back();
+}
+
+bool EntityManager::deleteEnt(unsigned int argID)
+{
+    for (unsigned int i = 0; i < m_Ents.size(); ++i)
     {
-        if (m_Entities[i]->id == argID)
+        if (m_Ents[i]->id == argID)
         {
-            m_Entities.erase(m_Entities.begin() + i);
+            m_Ents.erase(m_Ents.begin() + i);
             return true;
         }
     }
@@ -30,15 +41,15 @@ bool EntityManager::deleteEntity(unsigned int argID)
     return false;
 }
 
-std::shared_ptr<Entity> EntityManager::getEntByID(unsigned int argID)
+std::shared_ptr<Entity>& EntityManager::getEntByID(unsigned int argID)
 {
-    for (unsigned int i = 0; i < m_Entities.size(); ++i)
+    for (unsigned int i = 0; i < m_Ents.size(); ++i)
     {
-        if (m_Entities[i]->id == argID)
+        if (m_Ents[i]->id == argID)
         {
-            return m_Entities[i];
+            return m_Ents[i];
         }
     }
 
-    return nullptr;
+    return this->nullEnt;
 }
