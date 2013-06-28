@@ -33,10 +33,10 @@ public:
     template <class T> std::shared_ptr<T> comp();
 
 private:
-    std::vector<std::shared_ptr<Component>> comps;
+    std::vector<std::shared_ptr<Component>> m_Comps;
 
     // This is used to register a component, so that I can quickly check if it has the component or several components without iterating through the vector of components
-    std::bitset<constant::maxComps> m_compFlags;
+    std::bitset<constant::maxComps> m_CompFlags;
 
     // Disambiguate Recursive Variadic Template
     template <class T> bool hasComps()
@@ -50,7 +50,7 @@ bool Entity::hasComp()
 {
     T comp;
 
-    if (m_compFlags.test(comp.type))
+    if (m_CompFlags.test(comp.type))
     {
         return true;
     }
@@ -63,7 +63,7 @@ bool Entity::hasComps()
 {
     T1 comp;
 
-    if (m_compFlags.test(comp.type))
+    if (m_CompFlags.test(comp.type))
     {
         return (true && this->hasComps<T2, Other...>());
     }
@@ -76,14 +76,14 @@ bool Entity::removeComp()
 {
     T comp;
 
-    for (unsigned int i = 0; i < comps.size(); ++i)
+    for (unsigned int i = 0; i < m_Comps.size(); ++i)
     {
-        if (comps[i]->type == comp.type)
+        if (m_Comps[i]->type == comp.type)
         {
             //unregister component from flags
-            m_compFlags.set(comp.type, false);
+            m_CompFlags.set(comp.type, false);
 
-            comps.erase(comps.begin() + i);
+            m_Comps.erase(m_Comps.begin() + i);
             return true;
         }
     }
@@ -96,18 +96,18 @@ std::shared_ptr<T> Entity::comp()
 {
     T comp;
 
-    for (unsigned int i = 0; i < comps.size(); ++i)
+    for (unsigned int i = 0; i < m_Comps.size(); ++i)
     {
-        if (comps[i]->type == comp.type)
+        if (m_Comps[i]->type == comp.type)
         {
-            return std::static_pointer_cast<T>(comps[i]);
+            return std::static_pointer_cast<T>(m_Comps[i]);
         }
     }
 
-    m_compFlags.set(comp.type);
-    comps.push_back(std::shared_ptr<Component>(new T()));
+    m_CompFlags.set(comp.type);
+    m_Comps.push_back(std::shared_ptr<Component>(new T()));
 
-    return std::static_pointer_cast<T>(comps.back());
+    return std::static_pointer_cast<T>(m_Comps.back());
 }
 
 #endif

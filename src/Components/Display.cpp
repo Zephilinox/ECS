@@ -1,12 +1,16 @@
 #include "Components/Display.hpp"
 
-Display::Display()
+Display::Display():
+sprite(),
+m_Texture()
 {
     type = constant::Comp::Display;
 
 }
 
-Display::Display(std::string path)
+Display::Display(std::string path):
+sprite(),
+m_Texture()
 {
     type = constant::Comp::Display;
 

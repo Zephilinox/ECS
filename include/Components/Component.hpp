@@ -13,7 +13,6 @@ class Component
 public:
     Component();
     virtual ~Component();
-    Component& operator=(const Component&);
     constant::Comp type = constant::Comp::Base;
 };
 

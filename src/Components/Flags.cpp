@@ -1,6 +1,7 @@
 #include "Components/Flags.hpp"
 
-Flags::Flags()
+Flags::Flags():
+flags()
 {
     type = constant::Comp::Flags;
 }
