@@ -2,7 +2,11 @@
 1361652743 source:z:\programming\c++\github repositories\ecs\src\component.cpp
 	"Component.hpp"
 
+<<<<<<< HEAD
 1372409712 source:z:\programming\c++\github repositories\ecs\src\entity.cpp
+=======
+1362563757 source:z:\programming\c++\github repositories\ecs\src\entity.cpp
+>>>>>>> 302f22dc02d9dcd03d803aec741af77f9e03033a
 	"Entity.hpp"
 
 1362564070 source:z:\programming\c++\github repositories\ecs\src\entitymanager.cpp
@@ -415,6 +419,7 @@
 1362564692 source:z:\programming\c++\github repositories\ecs\src\systems\movementsystem.cpp
 	"Systems/MovementSystem.hpp"
 
+<<<<<<< HEAD
 1372409367 source:z:\programming\c++\github repositories\ecs\src\components\display.cpp
 	"Components/Display.hpp"
 
@@ -422,6 +427,15 @@
 	"Components/Movement.hpp"
 
 1372409367 source:z:\programming\c++\github repositories\ecs\src\components\flags.cpp
+=======
+1362167837 source:z:\programming\c++\github repositories\ecs\src\components\display.cpp
+	"Components/Display.hpp"
+
+1362562413 source:z:\programming\c++\github repositories\ecs\src\components\movement.cpp
+	"Components/Movement.hpp"
+
+1362167840 source:z:\programming\c++\github repositories\ecs\src\components\flags.cpp
+>>>>>>> 302f22dc02d9dcd03d803aec741af77f9e03033a
 	"Components/Flags.hpp"
 
 1361964942 source:z:\programming\c++\github repositories\ecs\src\components\ai.cpp

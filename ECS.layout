@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="include\Systems\CameraSystem.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="469" topLine="0" />
@@ -24,6 +25,20 @@
 	<File name="src\Systems\CameraSystem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="717" topLine="0" />
+=======
+	<File name="include\Constants.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="238" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Systems\CameraSystem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="717" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Entity.hpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1972" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\Systems\CollisionSystem.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -31,7 +46,37 @@
 			<Cursor1 position="299" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="include\EntityManager.hpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="981" topLine="6" />
+		</Cursor>
+	</File>
 	<File name="src\Systems\ControlSystem.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1573" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="src\Systems\MovementSystem.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="464" topLine="0" />
+>>>>>>> 302f22dc02d9dcd03d803aec741af77f9e03033a
+		</Cursor>
+	</File>
+	<File name="src\Systems\CollisionSystem.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="299" topLine="0" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
+	<File name="src\Systems\ControlSystem.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="src\Systems\RenderSystem.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3639" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="include\Systems\CameraSystem.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 302f22dc02d9dcd03d803aec741af77f9e03033a
 		<Cursor>
 			<Cursor1 position="1573" topLine="11" />
 		</Cursor>
@@ -46,9 +91,15 @@
 			<Cursor1 position="3639" topLine="45" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="include\Systems\CollisionSystem.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="539" topLine="0" />
+=======
+	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1582" topLine="9" />
+>>>>>>> 302f22dc02d9dcd03d803aec741af77f9e03033a
 		</Cursor>
 	</File>
 	<File name="include\Entity.hpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -56,6 +107,7 @@
 			<Cursor1 position="1972" topLine="0" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
 	<File name="include\EntityManager.hpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="981" topLine="6" />
@@ -69,6 +121,16 @@
 	<File name="include\Systems\ControlSystem.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="621" topLine="0" />
+=======
+	<File name="src\Factories\PlayerFactory.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\MapManager.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7622" topLine="127" />
+>>>>>>> 302f22dc02d9dcd03d803aec741af77f9e03033a
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
